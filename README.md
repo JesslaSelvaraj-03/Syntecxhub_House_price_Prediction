@@ -1,0 +1,190 @@
+🏡 House Price Prediction – Machine Learning Project
+
+This project predicts house prices using Linear Regression based on features like bedrooms, bathrooms, square footage, location, and age of the house.
+It covers Data Preprocessing → EDA → Model Training → Evaluation → Saving Model → Prediction.
+
+📂 Project Features
+✔️ 1. Load Dataset
+
+Loads a CSV file with 700 records containing:
+
+Bedrooms
+
+Bathrooms
+
+Sqft
+
+Location
+
+Age_of_House
+
+Price
+
+✔️ 2. Data Cleaning & Exploration
+
+Checks for missing values
+
+Displays dataset structure
+
+Generates statistical summary
+
+Shows sample rows
+
+✔️ 3. Feature Engineering
+
+Converts Location (categorical) to numeric using One-Hot Encoding
+
+Prepares data for Linear Regression
+
+Avoids dummy variable trap using drop_first=True
+
+✔️ 4. Train–Test Split
+
+80% Training data
+
+20% Testing data
+
+Used to check the performance of the model on unseen data.
+
+✔️ 5. Model Training
+
+Uses LinearRegression from scikit-learn:
+
+model = LinearRegression()
+model.fit(X_train, y_train)
+
+✔️ 6. Model Evaluation
+
+Metrics used:
+
+RMSE (Root Mean Squared Error)
+
+R² Score
+
+A high R² score confirms strong model performance.
+
+✔️ 7. Model Interpretation
+
+The model prints:
+
+Coefficients of each feature
+
+Intercept
+
+How much each feature contributes to final price prediction
+
+✔️ 8. Save Trained Model
+
+Model is saved using Joblib:
+
+house_price_model.pkl
+
+
+This allows reuse without retraining.
+
+✔️ 9. Example Prediction
+
+Example input:
+
+{
+    "Bedrooms": 3,
+    "Bathrooms": 2,
+    "Sqft": 1500,
+    "Age_of_House": 20,
+    "Location_Coastal": 1,
+    "Location_Hill Area": 0,
+    "Location_Industrial": 0,
+    "Location_Suburb": 0
+}
+
+
+Returns predicted price.
+
+✔️ 10. Correlation Heatmap
+
+A heatmap is included to visualize feature relationships:
+
+sns.heatmap(df.corr(), annot=True, cmap="coolwarm")
+
+
+Helps understand how features affect house prices.
+
+🛠️ Technologies Used
+Library / Tool	Purpose
+Python	Main programming language
+Pandas	Data handling & preprocessing
+NumPy	Numerical operations
+Matplotlib	Visualizations
+Seaborn	Heatmap & EDA
+Scikit-learn	ML model & evaluation
+Joblib	Saving the trained model
+📁 Project Structure
+House_Price_Prediction/
+│── house_dataset.csv
+│── EX2.py
+│── house_price_model.pkl
+│── README.md
+│── heatmap.png (optional)
+
+🚀 How to Run the Project
+1️⃣ Install Libraries
+pip install pandas numpy scikit-learn matplotlib seaborn joblib
+
+2️⃣ Run the Script
+python EX2.py
+
+3️⃣ View Output
+
+Model accuracy
+
+RMSE
+
+Predictions
+
+Correlation heatmap
+
+Encoded features
+
+Saved model
+
+📊 Output Highlights
+
+Dataset Info
+
+Summary Statistics
+
+One-Hot Encoded Data
+
+R² Score
+
+RMSE Score
+
+Coefficients & Intercept
+
+Prediction Results
+
+Heatmap Visualization
+
+🎯 Final Outcome
+
+This project successfully demonstrates:
+
+Building a complete Linear Regression model
+
+Applying feature engineering
+
+Evaluating ML models using multiple metrics
+
+Saving and reusing ML models
+
+Performing EDA using visualizations
+
+It serves as a high-quality beginner ML project suitable for:
+
+GitHub portfolio
+
+Internships
+
+Job applications
+
+Academic submissions
